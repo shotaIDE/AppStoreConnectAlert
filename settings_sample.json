@@ -1,0 +1,6 @@
+{
+    "chromeDriverPath": "./chromedriver",
+    "appleID": "hogehoge@icloud.com",
+    "password": "fugafuga",
+    "slackIncomingWebhookUrl": "https://hooks.slack.com/services/hogehoge"
+}
