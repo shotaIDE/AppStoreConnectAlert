@@ -21,4 +21,10 @@ Install required packages.
 pip install -r requirements.txt
 ```
 
+Copy settings json file and write chrome driver path and credentials in it.
+
+```shell
+cp settings_sample.json settings.json
+```
+
 Run the script using the "Launch" configuration.
