@@ -64,6 +64,19 @@ try:
             sleep(1)
             continue
 
+        try:
+            with open('previous_message.txt', 'r', encoding='utf8') as f:
+                previous_message = ''.join(f.readlines())
+        except Exception as e:
+            previous_message = ''
+            print(e)
+
+        if alert_message == previous_message:
+            print(
+                'Alert message has not changed from previous time, '
+                'so skip to send a push message.')
+            break
+
         payload = {
             'text': alert_message,
         }
@@ -71,5 +84,8 @@ try:
         break
 except Exception as e:
     print(e)
+
+with open('previous_message.txt', 'w', encoding='utf8') as f:
+    f.writelines(alert_message)
 
 browser.quit()
